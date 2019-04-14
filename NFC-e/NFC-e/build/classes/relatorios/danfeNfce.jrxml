@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="danfeNfce" pageWidth="302" pageHeight="800" columnWidth="286" leftMargin="8" rightMargin="8" topMargin="20" bottomMargin="0" isIgnorePagination="true" uuid="43e8f7d9-a4a8-4ac1-b35c-59d8ae725204">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="640"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ENDERECO_SEFAZ" class="java.lang.String"/>
+	<parameter name="QR_CODE" class="java.awt.Image"/>
+	<queryString language="xPath">
+		<![CDATA[/nfeProc/NFe/infNFe/det]]>
+	</queryString>
+	<field name="xNome" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/xNome]]></fieldDescription>
+	</field>
+	<field name="CNPJ" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/CNPJ]]></fieldDescription>
+	</field>
+	<field name="xLgr" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/xLgr]]></fieldDescription>
+	</field>
+	<field name="nro" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/nro]]></fieldDescription>
+	</field>
+	<field name="xBairro" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/xBairro]]></fieldDescription>
+	</field>
+	<field name="xMun" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/xMun]]></fieldDescription>
+	</field>
+	<field name="UF" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/enderEmit/UF]]></fieldDescription>
+	</field>
+	<field name="IE" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/emit/IE]]></fieldDescription>
+	</field>
+	<field name="cProd" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/cProd]]></fieldDescription>
+	</field>
+	<field name="xProd" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/xProd]]></fieldDescription>
+	</field>
+	<field name="qCom" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/qCom]]></fieldDescription>
+	</field>
+	<field name="vUnCom" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/vUnCom]]></fieldDescription>
+	</field>
+	<field name="uCom" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/uCom]]></fieldDescription>
+	</field>
+	<field name="vProd" class="java.lang.String">
+		<fieldDescription><![CDATA[prod/vProd]]></fieldDescription>
+	</field>
+	<field name="vNF" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vNF]]></fieldDescription>
+	</field>
+	<field name="vTotTrib" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/total/ICMSTot/vTotTrib]]></fieldDescription>
+	</field>
+	<field name="tpAmb" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide/tpAmb]]></fieldDescription>
+	</field>
+	<field name="serie" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide/serie]]></fieldDescription>
+	</field>
+	<field name="nNF" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide/nNF]]></fieldDescription>
+	</field>
+	<field name="dhEmi" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/ide/dhEmi]]></fieldDescription>
+	</field>
+	<field name="chNFe" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/protNFe/infProt/chNFe]]></fieldDescription>
+	</field>
+	<field name="CPF" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/CPF]]></fieldDescription>
+	</field>
+	<field name="xNome2" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/NFe/infNFe/dest/xNome]]></fieldDescription>
+	</field>
+	<field name="nProt" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/protNFe/infProt/nProt]]></fieldDescription>
+	</field>
+	<field name="dhRecbto" class="java.lang.String">
+		<fieldDescription><![CDATA[/nfeProc/protNFe/infProt/dhRecbto]]></fieldDescription>
+	</field>
+	<variable name="TOTAL_ITENS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[Double.valueOf($F{qCom})]]></variableExpression>
+	</variable>
+	<title>
+		<band height="72" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="286" height="10" uuid="a74bdaf5-df36-457e-915f-27347bcbf72a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{xNome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="10" width="286" height="10" uuid="efbe58b5-c163-41b7-bdad-14f10309f24e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CNPJ: " + $F{CNPJ}.substring(0,2) + "." +
+$F{CNPJ}.substring(2,5) + "." + $F{CNPJ}.substring(5,8) + "/" +
+$F{CNPJ}.substring(8,12) + "-" + $F{CNPJ}.substring(12,14)
++ " - IE: " + $F{IE}
++ " - IM: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="286" height="10" uuid="8c8898fc-cecb-4cc3-bf1a-885d8066d68d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{xLgr}
++ ", " + $F{nro}
++ " - " + $F{xBairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="30" width="286" height="10" uuid="388fa089-5bd5-40e5-98a8-b314039a2d7c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{xMun} + " - " + $F{UF}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="40" width="286" height="1" uuid="da2b4f69-8b29-42a4-9b1d-c01c3e946dac"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="41" width="286" height="20" uuid="9463903d-cde9-464e-8086-4c56f6732f6f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DANFE NFC-e - Documento Auxiliar
+da Nota Fiscal de Consumidor Eletrônica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="61" width="286" height="10" uuid="dd9ef748-49d9-4502-b4f9-4367cbeeee2b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Não permite aproveitamento de crédito do ICMS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="70" width="286" height="1" uuid="25ef40bb-8deb-4ae8-ac80-d9cbc6a44a02"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="95" height="10" uuid="33ec2538-78cd-4c9b-8e6e-5961dcd7daf3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="0" width="191" height="10" uuid="5682caf3-87e8-4ae9-a467-a9cac9987c9b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="66" height="10" uuid="94a37a3b-3f7d-4207-b565-23277958c977"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qtde]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="10" width="40" height="10" uuid="240ddd12-814e-49d0-8fe7-bb4c0256f2ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="10" width="89" height="10" uuid="c3dfb502-20f7-46be-b202-73ff6ac21966"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Unitário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="10" width="102" height="10" uuid="b00a3df6-72f7-4ee1-86ea-9277bcef1d0c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="286" height="1" uuid="5eb54958-c192-4e82-83ba-1baf8531f0a9"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement positionType="Float" x="0" y="0" width="95" height="10" uuid="7ff768ff-1c19-41d8-83b3-b49e24f86b60"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cProd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="95" y="0" width="191" height="10" uuid="a155702d-e421-438f-b682-06cbf4765fef"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{xProd}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.000;-###0.000">
+				<reportElement positionType="Float" x="0" y="10" width="66" height="10" uuid="97a5f8e0-d503-48a4-8162-c745ea437065"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Double.valueOf($F{qCom})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="66" y="10" width="40" height="10" uuid="766a5ed4-c4ae-42f9-a7b4-f81a8a801f19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="false"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{uCom}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement positionType="Float" x="106" y="10" width="78" height="10" uuid="6e8b4fac-9597-45b0-aaa0-f7987757df46"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Double.valueOf($F{vUnCom})]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement positionType="Float" x="184" y="10" width="102" height="10" uuid="ff4f8825-8e08-43cf-abd7-685a18281c6f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Double.valueOf($F{vProd})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="500" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="184" height="10" uuid="d3739f27-b8c8-4bd9-98bf-8ed5f1fd6fae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTD. TOTAL DE ITENS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="184" height="10" uuid="88fc0024-b103-49b4-9c0e-2c4c5ca1631a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR TOTAL R$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="184" height="10" uuid="e5247c5a-3b97-4d3b-bbe1-fc58882e4244"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMA DE PAGAMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="20" width="102" height="10" uuid="01c9d871-04c7-4dda-b13b-cd9578ee0043"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR PAGO]]></text>
+			</staticText>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="184" y="10" width="102" height="10" uuid="31931ce0-d3ab-46ce-a739-654c9b83d06d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Double.valueOf($F{vNF})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="#,##0;-#,##0">
+				<reportElement x="184" y="0" width="102" height="10" uuid="7df46ae2-c87b-4a53-ba0a-3ca8ba18c6aa"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TOTAL_ITENS}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="30" width="286" height="10" uuid="89963771-0fb4-49e7-a298-e816ac96915a"/>
+				<subreportParameter name="XML_DATA_DOCUMENT">
+					<subreportParameterExpression><![CDATA[$P{XML_DATA_DOCUMENT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "danfeNfce_pagamentos.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement positionType="Float" x="0" y="40" width="286" height="1" uuid="ce54d3d3-5414-4b7d-a60a-c678b21ecb31"/>
+			</line>
+			<image scaleImage="Clip" hAlign="Center" vAlign="Middle" isUsingCache="true">
+				<reportElement positionType="Float" x="81" y="183" width="125" height="125" uuid="4e997782-6754-4e18-b4c7-6bf75a211d00"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(new com.google.zxing.qrcode.QRCodeWriter().encode("https://www.sefaz.rs.gov.br/NFCE/NFCE-COM.aspx?chNFe=53150410793118000178650040000000211000000219&nVersao=100&tpAmb=2&dhEmi=12d571d265a450284d1503ae696454795644a4ae&vNF=258.00&vICMS=39.06&digVal=58347e0739a9e3bb842d0f0f5b147adf579626fe&cIdToken=000001&cHashQRCode=3490b116035eb76894cffc02148e5ba1726d7ce9", com.google.zxing.BarcodeFormat.QR_CODE, 200, 200))]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="41" width="184" height="20" uuid="08b75649-02f3-4b5a-8830-d9810eae1397"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informação dos Tributos Totais Incidentes
+(Lei Federal 12.741/2012)]]></text>
+			</staticText>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement positionType="Float" x="184" y="41" width="102" height="10" uuid="6e3f6925-f817-433d-a47b-65d249c40019"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Double.valueOf($F{vTotTrib})]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="61" width="286" height="1" uuid="7de489fd-dd34-488e-9b90-dc9bbbd28d87"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="64" width="286" height="20" uuid="7a9ba9c5-9d7a-4435-920a-cb3217c70915"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" x="0" y="84" width="286" height="1" uuid="7812ef35-b181-4ab0-9399-be0b255d1202"/>
+			</line>
+			<textField>
+				<reportElement positionType="Float" x="0" y="87" width="286" height="10" uuid="1272c646-959f-4a83-967c-5cc4f4adcf7f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tpAmb}.equals("2") ? "EMITIDA EM AMBIENTE DE HOMOLOGAÇÃO - SEM VALOR FISCAL" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="97" width="286" height="10" uuid="8ad453e2-ced8-4334-80d9-5f54392332f8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Número: " + new DecimalFormat("000,000,000").format(Double.valueOf($F{nNF}))
++ " Série: " + new DecimalFormat("000").format(Double.valueOf($F{serie}))
++ " Emissão: " + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").parse($F{dhEmi}))
++ " - Via Consumidor"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="107" width="286" height="20" uuid="6b3295e9-45cd-43ff-84d8-bab210036e1f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Consulte pela Chave de Acesso em \n"
++ $P{ENDERECO_SEFAZ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="127" width="286" height="10" uuid="16223209-ef71-4758-8495-c0de5d973cda"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CHAVE DE ACESSO]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="137" width="286" height="10" uuid="440944f0-a5ad-43c5-9b56-e9013dd3217a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chNFe}.substring(0, 4) + " " +
+$F{chNFe}.substring(4, 8) + " " +
+$F{chNFe}.substring(8, 12) + " " +
+$F{chNFe}.substring(12, 16) + " " +
+$F{chNFe}.substring(16, 20) + " " +
+$F{chNFe}.substring(20, 24) + " " +
+$F{chNFe}.substring(24, 28) + " " +
+$F{chNFe}.substring(28, 32) + " " +
+$F{chNFe}.substring(32, 36) + " " +
+$F{chNFe}.substring(36, 40) + " " +
+$F{chNFe}.substring(40)]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="147" width="286" height="1" uuid="43a1f21d-85d6-4031-af14-aaeba181e156"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="150" width="286" height="10" uuid="214f06d5-f9e5-4e31-b424-c2a48bb86577"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSUMIDOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="160" width="286" height="10" uuid="a69c0247-febc-4ef8-8f3e-de9ea68c199f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CPF} != null ? "CPF: " + $F{CPF} + " - " + $F{xNome2} : "NÃO IDENTIFICADO"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="170" width="286" height="1" uuid="d00836b2-b649-4d58-87fa-d76ea2a74768"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="173" width="286" height="10" uuid="068ad998-c94e-47c9-8c25-f31600ee6594"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Consulta via leitor de QR Code]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="310" width="286" height="10" uuid="558da90c-e98c-4b74-a73c-b3b03711280e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Protocolo de Autorização: " + $F{nProt} + " " + new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").parse($F{dhRecbto}))]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="320" width="286" height="1" uuid="eab09488-af2f-437f-a945-c2d57df120ef"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="0" y="0" width="286" height="1" uuid="d84a3bdf-2c5f-4114-9d24-4e3d326199fc"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>

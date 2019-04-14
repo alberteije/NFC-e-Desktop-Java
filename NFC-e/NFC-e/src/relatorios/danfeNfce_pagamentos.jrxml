@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="danfeNfce_pagamentos" pageWidth="286" pageHeight="802" columnWidth="286" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="cddba3ca-c76e-4d04-9136-200cf1f741bc">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[/nfeProc/NFe/infNFe/pag]]>
+	</queryString>
+	<field name="tPag" class="java.lang.String">
+		<fieldDescription><![CDATA[tPag]]></fieldDescription>
+	</field>
+	<field name="vPag" class="java.lang.String">
+		<fieldDescription><![CDATA[vPag]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="10">
+			<textField>
+				<reportElement x="0" y="0" width="176" height="10" uuid="d68f5230-ca71-4f1c-9a10-d5c26fbdc7d7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tPag}.equals("01") ? "Dinheiro" :
+$F{tPag}.equals("02") ? "Cheque" :
+$F{tPag}.equals("03") ? "Cartão de Crédito" :
+$F{tPag}.equals("04") ? "Cartão de Débito" : "Outro"]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="176" y="0" width="110" height="10" uuid="a3e48138-9007-49b8-81a9-d115dcc8dbb4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Courier New" size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[Double.valueOf($F{vPag})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
